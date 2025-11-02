@@ -19,6 +19,8 @@ ninja -C build syzygy_app
 ./build/src/syzygy_app
 ```
 
+Prototypes are off by default; enable them with `-DSYZYGY_BUILD_PROTOTYPES=ON` if you need the legacy tools.
+
 ## AppImage
 
 1. Download `appimagetool` and export `APPIMAGETOOL=/path/to/appimagetool`.

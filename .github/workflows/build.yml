@@ -32,7 +32,7 @@ jobs:
           chmod +x appimagetool
 
       - name: Configure (native)
-        run: cmake -S . -B build -G Ninja -DCMAKE_BUILD_TYPE=Release
+        run: cmake -S . -B build -G Ninja -DCMAKE_BUILD_TYPE=Release -DSYZYGY_BUILD_PROTOTYPES=OFF
 
       - name: Build (native)
         run: ninja -C build syzygy_app
@@ -40,7 +40,7 @@ jobs:
       - name: Configure (AppImage)
         env:
           APPIMAGETOOL: ${{ github.workspace }}/appimagetool
-        run: cmake -S . -B build-appimage -G Ninja -DSYZYGY_BUILD_APPIMAGE=ON -DCMAKE_BUILD_TYPE=Release
+        run: cmake -S . -B build-appimage -G Ninja -DSYZYGY_BUILD_APPIMAGE=ON -DCMAKE_BUILD_TYPE=Release -DSYZYGY_BUILD_PROTOTYPES=OFF
 
       - name: Build AppDir
         run: ninja -C build-appimage appdir
