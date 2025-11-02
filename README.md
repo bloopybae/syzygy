@@ -19,20 +19,6 @@ ninja -C build syzygy_app
 ./build/src/syzygy_app
 ```
 
-Prototypes are off by default; enable them with `-DSYZYGY_BUILD_PROTOTYPES=ON` if you need the legacy tools.
-
-## AppImage
-
-1. Download `appimagetool` and export `APPIMAGETOOL=/path/to/appimagetool`.
-2. Build:
-
-   ```bash
-   cmake -S . -B build-appimage -G Ninja -DSYZYGY_BUILD_APPIMAGE=ON
-   ninja -C build-appimage appimage
-   ```
-
-AppImage and staging AppDir land in `build-appimage/dist/`.
-
 ## License
 
 MIT © 2025 Zoe Gates <zoe@zeocities.dev>
