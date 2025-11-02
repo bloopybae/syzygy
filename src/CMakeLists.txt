@@ -70,5 +70,3 @@ install(FILES ${PROJECT_SOURCE_DIR}/resources/icon.png
         RENAME syzygy.png)
 install(FILES ${PROJECT_SOURCE_DIR}/LICENSE
         DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/licenses/syzygy)
-install(PROGRAMS ${PROJECT_SOURCE_DIR}/resources/AppRun
-        DESTINATION .)

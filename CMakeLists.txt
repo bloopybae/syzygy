@@ -29,7 +29,9 @@ endif()
 if(SYZYGY_BUILD_APPIMAGE)
   set(SYZYGY_APPDIR "${CMAKE_BINARY_DIR}/AppDir")
   add_custom_target(appdir
-    COMMAND ${CMAKE_COMMAND} --install ${CMAKE_BINARY_DIR} --prefix ${SYZYGY_APPDIR} --config $<CONFIG>
+    COMMAND ${CMAKE_COMMAND} -E make_directory ${SYZYGY_APPDIR}
+    COMMAND ${CMAKE_COMMAND} --install ${CMAKE_BINARY_DIR} --prefix ${SYZYGY_APPDIR}/usr --config $<CONFIG>
+    COMMAND ${CMAKE_COMMAND} -E copy_if_different ${PROJECT_SOURCE_DIR}/resources/AppRun ${SYZYGY_APPDIR}/AppRun
     DEPENDS syzygy_app
     COMMENT "Staging AppDir at ${SYZYGY_APPDIR}")
 
