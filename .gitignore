@@ -1,0 +1,8 @@
+/build/
+/build-*/
+/dist/
+/*.AppImage
+*.AppImage
+*.tar.gz
+.DS_Store
+*.swp

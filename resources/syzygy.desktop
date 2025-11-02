@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=Syzygy
+Comment=Low-latency capture preview for HDMI cards
+Exec=syzygy_app
+Icon=syzygy
+Terminal=false
+Categories=AudioVideo;Video;GTK;
