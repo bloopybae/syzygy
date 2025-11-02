@@ -166,8 +166,8 @@ void MainWindow::start_current_device() {
     return;
   }
 
-  const auto id = device_combo_.get_active_id();
-  if (id.empty()) {
+  const Glib::ustring active_id = device_combo_.get_active_id();
+  if (active_id.empty()) {
     capture_session_.stop();
     audio_controller_.stop();
     video_widget_.show_placeholder("Select a capture device");
@@ -182,6 +182,8 @@ void MainWindow::start_current_device() {
     }
     return;
   }
+
+  const std::string id = active_id.raw();
 
   audio_controller_.stop();
   reset_video_timeline();
